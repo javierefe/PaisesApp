@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "AppPaises"
+  "defaultProject": "AppPaises",
+  "cli": {
+    "analytics": false
+  }
 }
