@@ -19,3 +19,6 @@ export class SidebarComponent implements OnInit {
   }
 
 }
+
+// Creacion del modulo shared importado porque estaran elementos
+// reutilizables para la aplicacion 

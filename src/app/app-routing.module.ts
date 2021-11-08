@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core'
+import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
 import { PorPaisComponent } from './pais/pages/por-pais/por-pais.component';
@@ -10,7 +10,7 @@ const routes: Routes = [
     {
         path     : '',
         component: PorPaisComponent,
-        pathMatch: 'full'
+        pathMatch: 'full' // se usa para el primer componente que se quiere mostrar
     },
     {
         path     : 'region',
@@ -25,17 +25,17 @@ const routes: Routes = [
         component: VerPaisComponent,
     },
     {
-        path: '**',
-        redirectTo: ''
+        path: '**', // cuaalquier otra ruta redirecciona al HOME
+        redirectTo: '' // HOME
     }
 ];
 
 @NgModule({
     imports: [
-        RouterModule.forRoot( routes )
+        RouterModule.forRoot( routes ) // FOR ROOT RUTAS PRINCIAPLES
     ],
     exports: [
-        RouterModule
+        RouterModule // Para utilizarlo fuera
     ],
 
 })
