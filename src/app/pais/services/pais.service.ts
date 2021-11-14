@@ -9,11 +9,19 @@ import { Country } from '../interfaces/pais.interface';
 export class PaisService {
 
   private apiUrl: string = 'https://restcountries.com/v2';
+  
 
-  // es importante injectar
+
+  // es importante injectar el HttpClient
   constructor( private http: HttpClient ) { }
 
-  buscarPais( termino: string ): Observable<Country[]>{
+  // es factible usar el fetch pero se usara el http de angular common que viene de angular
+  // para eso se debe importar en el app.module
+
+  // buscar pais retorna un observable
+  // retorna un arreglo con todos los paises
+  buscarPais( termino: string ): Observable<Country[]>{  
+    // construyendo url
     const url = `${this.apiUrl}/name/${termino}`;
 
     return this.http.get<Country[]>( url );

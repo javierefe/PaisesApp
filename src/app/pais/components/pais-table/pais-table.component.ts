@@ -3,8 +3,7 @@ import { Country } from '../../interfaces/pais.interface';
 
 @Component({
   selector: 'app-pais-table',
-  templateUrl: './pais-table.component.html',
-  styleUrls: ['./pais-table.component.css']
+  templateUrl: './pais-table.component.html'
 })
 export class PaisTableComponent{
 

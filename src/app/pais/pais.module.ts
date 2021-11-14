@@ -28,7 +28,7 @@ import { PaisInputComponent } from './components/pais-input/pais-input.component
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule, // para capturar de los imputs (ngmodel)
     HttpClientModule,
     RouterModule
   ]

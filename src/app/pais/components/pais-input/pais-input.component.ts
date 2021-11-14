@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output, OnInit, Input } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject } from 'rxjs';  // es un observable
 import { debounceTime } from 'rxjs/operators'
 
 @Component({
@@ -10,7 +10,7 @@ import { debounceTime } from 'rxjs/operators'
 })
 export class PaisInputComponent implements OnInit{
 
-  
+  // SE TIENE QUE EMITIR ESTE EVENTO, lo que se emite es el terminio
   @Output() onEnter: EventEmitter<string> = new EventEmitter();
   // se emite cuando la persona deja de escribir
   @Output() onDebounce : EventEmitter<string> = new EventEmitter();
@@ -30,10 +30,12 @@ export class PaisInputComponent implements OnInit{
       )
       .subscribe(valor => {
         // console.log('debouncer:', valor)
+        // se imprime lo que presiono teclaPresionada()
         this.onDebounce.emit( valor )
       })
   }
 
+  // emitiendo el termino
   buscar() {
     this.onEnter.emit(this.termino)
   }
@@ -41,6 +43,7 @@ export class PaisInputComponent implements OnInit{
   teclaPresionada(){
     // const valor = event?.target.value;
     
+    // el next esta suscrito al .suscribe
     this.debouncer.next(this.termino);
   }
 }

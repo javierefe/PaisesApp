@@ -13,7 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule   // se tiene que importar en el modulo donde se utilice
   ]
 })
 export class SharedModule { }
