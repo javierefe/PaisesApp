@@ -29,7 +29,7 @@ export class PaisInputComponent implements OnInit{
         debounceTime(300) // no emitas el suscribe hasta que el obserbable deje de emitir en el tiempo de 300
       )
       .subscribe(valor => {
-        // console.log('debouncer:', valor)
+        console.log('debouncer:', valor)
         // se imprime lo que presiono teclaPresionada()
         this.onDebounce.emit( valor )
       })
@@ -42,7 +42,6 @@ export class PaisInputComponent implements OnInit{
 
   teclaPresionada(){
     // const valor = event?.target.value;
-    
     // el next esta suscrito al .suscribe
     this.debouncer.next(this.termino);
   }
